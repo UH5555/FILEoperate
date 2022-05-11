@@ -203,3 +203,65 @@
 //	printf("%d %f %s\n", tmp.n, tmp.score, tmp.arr);
 //	return 0;
 //}
+
+//struct  S
+//{
+//	char name[20];
+//	int age;
+//	double score;
+//};
+//
+//int main()
+//{
+//	struct S s = { "张三",20,55.6 };
+//	FILE* pf = fopen("test.txt", "wb");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	fwrite(&s, sizeof(struct S), 1, pf);
+//	//二进制的形式写文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+//struct  S
+//{
+//	char name[20];
+//	int age;
+//	double score;
+//};
+//
+//int main()
+//{
+//	//struct S s = { "张三",20,55.6 };
+//	struct S tmp = { 0 };
+//	FILE* pf = fopen("test.txt", "rb");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	fread(&tmp, sizeof(struct S), 1, pf);
+//	printf("%s %d %lf\n", tmp.name, tmp.age, tmp.score);
+//	//二进制的形式写文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	//1.定位文件
+	fseek(pf,-2,SEEK_END);
+	//2.读取文件
+	printf("%c\n",fgetc(pf));
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
