@@ -250,18 +250,99 @@
 //	return 0;
 //}
 
-int main()
-{
-	FILE* pf = fopen("test.txt", "r");
-	if (pf == NULL)
-	{
-		return 0;
-	}
-	//1.定位文件
-	fseek(pf,-2,SEEK_END);
-	//2.读取文件
-	printf("%c\n",fgetc(pf));
-	fclose(pf);
-	pf = NULL;
-	return 0;
-}
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	//1.定位文件
+//	fseek(pf,-2,SEEK_END);
+//	//2.读取文件
+//	printf("%c\n",fgetc(pf));
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	//1.定位文件
+//	//fseek(pf,-2,SEEK_END);
+//	int ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	//int pos = ftell(pf);//
+//	//printf("%d\n", pos);
+//	// 
+//	rewind(pf);
+//	ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	//2.读取文件
+//	printf("%c\n",fgetc(pf));
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	//feof();//EOF  -   end of file  -  文件结束标志
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//		return 0;
+//	int ch = fgetc(pf);
+//	printf("%d\n", ch);
+//
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	//strerror - 把错误码对应的错误信息的字符串地址返回
+//	//printf("%s\n", strerror(errno));
+//
+//	//perror
+//	FILE* pf = fopen("test2.txt", "r");
+//	if (!pf)
+//	{
+//		perror("hehe");
+//		return 0; 
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("open file test2.txt");
+//		return 0;
+//	}
+//	int ch = 0;
+//	while ((ch = fgetc(pf)) != EOF)
+//	{
+//		putchar(ch);
+//	}
+//	if (ferror(pf))
+//	{
+//		printf("error\n");
+//	}
+//	else if (feof(pf))
+//	{
+//		printf("end of file\n");
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
